@@ -1,7 +1,7 @@
 <template>
     <div>
         <ul>
-            <li v-for="movie in movies">
+            <li :key="movie.id" v-for="movie in movies">
                 <Movie :movie="movie" />
             </li>
         </ul>
@@ -15,7 +15,7 @@ export default {
   name: 'MoviesList',
   data() {
     return {
-      movies: [],
+      movies: []
     };
   },
   created: function() {
@@ -30,13 +30,14 @@ export default {
         const movies = await res.json();
         this.movies = movies.results;
       } catch (e) {
+        // eslint-disable-next-line
         console.log(e);
       }
-    },
+    }
   },
   components: {
-    Movie,
-  },
+    Movie
+  }
 };
 </script>
 

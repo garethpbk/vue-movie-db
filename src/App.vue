@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header :title="title" />
-    <router-view />
+      <router-view />
   </div>
 </template>
 
@@ -12,12 +12,12 @@ export default {
   name: 'app',
   data() {
     return {
-      title: 'Vue Movie DB'
+      title: 'Vue Movie DB',
     };
   },
   components: {
-    Header
-  }
+    Header,
+  },
 };
 </script>
 
